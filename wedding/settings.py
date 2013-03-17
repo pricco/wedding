@@ -1,4 +1,5 @@
-import dj_database_url,os
+import dj_database_url
+import os
 
 PROJECT_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..')
 
@@ -17,16 +18,15 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': dj_database_url.config(default='sqlite:///{}'.format(rel('db.sqlite')))
 }
 
 ALLOWED_HOSTS = ['nataliaypablo.com']
 
 
 TIME_ZONE = 'America/Montevideo'
-LANGUAGE_CODE = 'es-uy'
+LANGUAGE_CODE = 'en-us'
 
-SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
@@ -36,7 +36,7 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = rel('collectstatic')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    rel('static')
+    rel('static'),
 )
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -59,22 +59,30 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+AUTH_USER_MODEL = 'account.User'
+
 ROOT_URLCONF = 'wedding.urls'
 
 WSGI_APPLICATION = 'wedding.wsgi.application'
 
 TEMPLATE_DIRS = (
-    rel('templates')
+    rel('templates'),
 )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+
+    'south',
+
+    'account',
+    'home',
+    'music',
+    'location',
+    'rsvp',
 )
 
 LOGGING = {

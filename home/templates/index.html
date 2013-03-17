@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <header>Natalia & Pablo - 27 de Abril del 2013</header>
+    <nav>
+        <ul>
+            <li class="to-home" tabindex="0">Inicio</li>
+            <li class="to-rsvp" tabindex="0">RSVP</li>
+            <li class="to-map" tabindex="0">Mapa</li>
+        </ul>
+    </nav>
+    <ul class="player">
+        <li class="current"></li>
+        <li class="play">Pause</li>
+        <li class="next">Next</li>
+    </ul>
+    <div class="background"><div></div></div>
+    <div id="map" class="map"></div>
+    <div class="rsvp"></div>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeluuxQYWU4adJLorJ2qPPtsn9RgZEoi0&sensor=false"></script>
+    <script src="{% static 'vendor/soundmanager2/js/soundmanager2.js' %}"></script>
+    <script>
+        window.songs = [
+            {% for song in songs %}
+                {
+                    id: "song-{{ forloop.counter0 }}",
+                    artist: "{{ song.artist }}",
+                    title: "{{ song.title }}",
+                    url: "{{ song.path.url }}"
+                },
+            {% endfor %}
+        ];
+        window.locations = [
+            {% for location in locations %}
+                {
+                    id: "location-{{ forloop.counter0 }}",
+                    title: "{{ location.title }}",
+                    description: "{{ location.description }}",
+                    latitude: {{ location.latitude }},
+                    longitude: {{ location.longitude }}
+                },
+            {% endfor %}
+        ];
+    </script>
+    <script src="{% static 'js/index.js' %}"></script>
+{% endblock %}
