@@ -1,4 +1,3 @@
-import dj_database_url
 import os
 
 PROJECT_ROOT = os.path.join(os.path.abspath(os.path.dirname(__file__)), '..')
@@ -18,7 +17,14 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///{}'.format(rel('db.sqlite')))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':  os.path.join(PROJECT_ROOT, 'db.sqlite'),
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': ''
+    }
 }
 
 ALLOWED_HOSTS = ['nataliaypablo.com']
@@ -31,9 +37,24 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+AWS_ACCESS_KEY_ID = None
+AWS_SECRET_ACCESS_KEY = None
+AWS_QUERYSTRING_AUTH = False
+AWS_IS_GZIPPED = True
+AWS_S3_SECURE_URLS = False
+
 MEDIA_ROOT = rel('media')
 MEDIA_URL = '/media/'
-STATIC_ROOT = rel('collectstatic')
+MEDIA_BUCKET = 'nataliaypablo'
+MEDIA_HEADERS = {
+    'Expires': 'Thu, 31 Dec 2050 00:00:00 GMT',
+    'Cache-Control': 'max-age=315360000, public',
+}
+MEDIA_LOCATION = 'media'
+MEDIA_DOMAIN = None
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+
+STATIC_ROOT = rel('collectedstatic')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     rel('static'),
@@ -42,6 +63,14 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
+STATIC_BUCKET = 'nataliaypablo'
+STATIC_HEADERS = {
+    'Expires': 'Thu, 31 Dec 2050 00:00:00 GMT',
+    'Cache-Control': 'max-age=315360000, public',
+    }
+STATIC_LOCATION = 'static'
+STATIC_DOMAIN = None
+STATICFILES_STORAGE  = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 SECRET_KEY = '6lg+yulbm5m=e&8=@e=5j&0r5xqtk(j08*ee8v9*c1b0fz8(ki'
 

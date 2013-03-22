@@ -8,7 +8,7 @@ soundManager.setup({
         $.each(window.songs, function(i, song){
             soundManager.createSound({ id: song.id, url: song.url});
         });
-        var current = Math.floor(Math.random() * window.songs.length);
+        var current = 0; //Math.floor(Math.random() * window.songs.length);
         var textInterval;
         var textShow = function(text) {
             if (textInterval) {
@@ -85,12 +85,19 @@ google.maps.event.addDomListener(window, 'load', function() {
         center: new google.maps.LatLng(-34.397, 150.644),
         zoom: 8,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true,
+        zoomControl: true,
+        zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.LARGE,
+            position: google.maps.ControlPosition.RIGHT_TOP
+        },
         styles: [
             {
-                stylers: [
+                /*stylers: [
                     { hue: "#00ffe6" },
                     { saturation: -20 }
-                ]
+                ]*/
+                stylers: [ { "gamma": 1.58 }, { "saturation": 30 }, { "weight": 0.1 } ]
             },{
                 featureType: "road",
                 elementType: "geometry",
