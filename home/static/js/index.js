@@ -1,5 +1,5 @@
 soundManager.setup({
-    url: '/static/vendor/soundmanager2/swf/',
+    url: window.STATIC_URL + 'vendor/soundmanager2/swf/',
     flashVersion: 9,
     useFlashBlock: false,
     debugFlash: false,
