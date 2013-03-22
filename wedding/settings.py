@@ -107,6 +107,7 @@ INSTALLED_APPS = (
 
     'south',
 
+    'core',
     'account',
     'home',
     'music',
