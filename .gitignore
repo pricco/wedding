@@ -2,3 +2,4 @@
 *.pyc
 db.sqlite
 media/
+settings_local.py
