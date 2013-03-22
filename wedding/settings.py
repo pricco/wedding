@@ -51,7 +51,7 @@ MEDIA_HEADERS = {
     'Cache-Control': 'max-age=315360000, public',
 }
 MEDIA_LOCATION = 'media'
-MEDIA_DOMAIN = None
+MEDIA_DOMAIN = 'd24xzry264ziu9.cloudfront.net'
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 STATIC_ROOT = rel('collectedstatic')
@@ -69,8 +69,8 @@ STATIC_HEADERS = {
     'Cache-Control': 'max-age=315360000, public',
     }
 STATIC_LOCATION = 'static'
-STATIC_DOMAIN = None
-STATICFILES_STORAGE  = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATIC_DOMAIN = 'd24xzry264ziu9.cloudfront.net'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 SECRET_KEY = '6lg+yulbm5m=e&8=@e=5j&0r5xqtk(j08*ee8v9*c1b0fz8(ki'
 
