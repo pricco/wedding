@@ -2,8 +2,8 @@ soundManager.setup({
     url: window.STATIC_URL + 'vendor/soundmanager2/swf/',
     flashVersion: 9,
     useFlashBlock: false,
-    debugFlash: false,
-    debugMode: false,
+    debugFlash: true,
+    debugMode: true,
     onready: function() {
         $.each(window.songs, function(i, song){
             soundManager.createSound({ id: song.id, url: song.url});
