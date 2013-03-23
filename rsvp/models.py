@@ -3,7 +3,7 @@ import random
 
 
 def random_code():
-    return ''.join(random.choice('ABCDEFGHIJKLMNOPQRSTUWXYZ0123456789') for _ in range(3))
+    return ''.join(random.choice('ABCDEFGHJKMNPQRSTUWXYZ23456789') for _ in range(3))
 
 
 HOST = (
