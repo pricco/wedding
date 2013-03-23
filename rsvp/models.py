@@ -32,7 +32,7 @@ class Group(models.Model):
     code = models.CharField(max_length=3, unique=True, default=random_code)
     invited_by = models.CharField(choices=HOST, max_length=1)
     name = models.CharField(max_length=200)
-    status = models.CharField(max_length=1, choices=STATUSES)
+    status = models.CharField(max_length=1, choices=STATUSES, default='A')
     comment = models.TextField(null=True, blank=True)
     phone = models.CharField(max_length=100, null=True, blank=True)
     called = models.BooleanField(default=False)
