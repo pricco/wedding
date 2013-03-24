@@ -51,7 +51,7 @@ class GuestChangeList(ChangeList):
 
 class GuestAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'attendance', 'table', 'child', 'celiac', 'diabetic',)
+    list_display = ('name', 'age', 'attendance', 'table', 'celiac', 'diabetic',)
     list_filter = ('listed', 'attendance', 'age', 'table', 'celiac', 'diabetic')
     readonly_fields = ('updated',)
     search_fields = ('name', 'group__name',)
