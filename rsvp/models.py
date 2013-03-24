@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.encoding import smart_str, smart_unicode
 import random
 
 
@@ -26,6 +27,12 @@ ATTENDANCE = (
     ('N', 'No',),
 )
 
+AGES = (
+    ('B', 'Baby',),
+    ('C', 'Child',),
+    ('A', 'Adult',),
+)
+
 
 class Group(models.Model):
 
@@ -42,7 +49,6 @@ class Group(models.Model):
     def count(self):
         return len(self.guests.all())
 
-    #@property
     def guests_names(self):
         return ', '.join([guest.name for guest in self.guests.all()])
     guests_names.short_description = 'Guests'
@@ -52,6 +58,9 @@ class Group(models.Model):
         return len(filter(lambda g: g.attendance == 'Y', self.guests.all()))
 
     def __str__(self):
+        return smart_str(self.name)
+
+    def __unicode__(self):
         return self.name
 
 
@@ -59,12 +68,16 @@ class Guest(models.Model):
 
     group = models.ForeignKey(Group, related_name='guests')
     name = models.CharField(max_length=200)
+    age = models.CharField(max_length=1, choices=AGES, default='A')
     attendance = models.CharField(max_length=1, choices=ATTENDANCE, default='U')
+    listed = models.BooleanField(default=False)
     diabetic = models.BooleanField(default=False)
     celiac = models.BooleanField(default=False)
-    child = models.BooleanField(default=False)
     table = models.IntegerField(null=True, blank=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
+        return smart_str(self.name)
+
+    def __unicode__(self):
         return self.name
