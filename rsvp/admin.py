@@ -30,6 +30,7 @@ class GroupAdmin(admin.ModelAdmin):
     list_filter = ('status', 'invited_by', 'called', 'web',)
     readonly_fields = ('updated',)
     search_fields = ('name', 'guests__name',)
+    ordering = ('name',)
 
     list_per_page = 1000
     list_max_show_all = 1000
@@ -56,6 +57,7 @@ class GuestAdmin(admin.ModelAdmin):
     list_filter = ('attendance', 'age', 'table', 'celiac', 'diabetic')
     readonly_fields = ('updated',)
     search_fields = ('name', 'alias', 'group__name',)
+    ordering = ('name',)
 
     list_per_page = 1000
     list_max_show_all = 1000
