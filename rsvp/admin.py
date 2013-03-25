@@ -7,7 +7,8 @@ from django.db.models import Sum, Count
 class GuestInline(admin.TabularInline):
 
     model = Guest
-    fields = ('listed', 'name', 'age', 'table', 'attendance', 'diabetic', 'celiac',)
+    ordering = ('order', 'id',)
+    fields = ('order', 'name', 'alias', 'age', 'attendance', 'table', 'diabetic', 'celiac',)
 
 
 class GroupChangeList(ChangeList):
@@ -51,8 +52,8 @@ class GuestChangeList(ChangeList):
 
 class GuestAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'age', 'attendance', 'table', 'celiac', 'diabetic',)
-    list_filter = ('listed', 'attendance', 'age', 'table', 'celiac', 'diabetic')
+    list_display = ('name', 'alias', 'age', 'attendance', 'table', 'celiac', 'diabetic',)
+    list_filter = ('attendance', 'age', 'table', 'celiac', 'diabetic')
     readonly_fields = ('updated',)
     search_fields = ('name', 'group__name',)
 

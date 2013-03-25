@@ -50,7 +50,7 @@ class Group(models.Model):
         return len(self.guests.all())
 
     def guests_names(self):
-        return ', '.join([guest.name for guest in self.guests.all()])
+        return ', '.join([guest.name for guest in self.guests.order_by('order', 'id')])
     guests_names.short_description = 'Guests'
 
     @property
@@ -67,13 +67,14 @@ class Group(models.Model):
 class Guest(models.Model):
 
     group = models.ForeignKey(Group, related_name='guests')
+    order = models.IntegerField(default=0)
+    alias = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     age = models.CharField(max_length=1, choices=AGES, default='A')
     attendance = models.CharField(max_length=1, choices=ATTENDANCE, default='U')
-    listed = models.BooleanField(default=False)
+    table = models.IntegerField(null=True, blank=True)
     diabetic = models.BooleanField(default=False)
     celiac = models.BooleanField(default=False)
-    table = models.IntegerField(null=True, blank=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
