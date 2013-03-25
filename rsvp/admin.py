@@ -55,7 +55,7 @@ class GuestAdmin(admin.ModelAdmin):
     list_display = ('name', 'alias', 'age', 'attendance', 'table', 'celiac', 'diabetic',)
     list_filter = ('attendance', 'age', 'table', 'celiac', 'diabetic')
     readonly_fields = ('updated',)
-    search_fields = ('name', 'group__name',)
+    search_fields = ('name', 'alias', 'group__name',)
 
     list_per_page = 1000
     list_max_show_all = 1000
