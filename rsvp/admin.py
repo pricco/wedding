@@ -57,6 +57,9 @@ class GuestAdmin(admin.ModelAdmin):
     readonly_fields = ('updated',)
     search_fields = ('name', 'group__name',)
 
+    list_per_page = 1000
+    list_max_show_all = 1000
+
     def get_changelist(self, request, **kwargs):
         return GuestChangeList
 
