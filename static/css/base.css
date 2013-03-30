@@ -22,11 +22,11 @@
 
 @font-face {
     font-family: 'JacquesFrancoisRegular';
-    src: url('JacquesFrancois-regular-webfont.eot');
-    src: url('JacquesFrancois-regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('JacquesFrancois-regular-webfont.woff') format('woff'),
-    url('JacquesFrancois-regular-webfont.ttf') format('truetype'),
-    url('JacquesFrancois-regular-webfont.svg#JacquesFrancoisRegular') format('svg');
+    src: url('../fonts/JacquesFrancois-regular-webfont.eot');
+    src: url('../fonts/JacquesFrancois-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/JacquesFrancois-regular-webfont.woff') format('woff'),
+    url('../fonts/JacquesFrancois-regular-webfont.ttf') format('truetype'),
+    url('../fonts/JacquesFrancois-regular-webfont.svg#JacquesFrancoisRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
