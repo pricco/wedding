@@ -170,7 +170,7 @@ google.maps.event.addDomListener(window, 'load', function() {
             content: $('<div>').append($('<div>').addClass(location.css).html(location.content)).html(),
             disableAutoPan: false,
             maxWidth: 0,
-            pixelOffset: new google.maps.Size(-120, -40),
+            pixelOffset: new google.maps.Size(-130, -40),
             zIndex: null,
             infoBoxClearance: new google.maps.Size(1, 1),
             isHidden: false,
