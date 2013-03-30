@@ -10,8 +10,9 @@
     <header><img src="{% static 'img/header.png' %}" alt="Natalia & Pablo - 27 de Abril del 2013" /></header>
     <nav>
         <ul>
+            <li class="to-home" tabindex="0">Inicio</li>
             <li class="to-rsvp" tabindex="0">RSVP</li>
-            <li class="to-map" tabindex="0">Como Llegar</li>
+            <li class="to-map" tabindex="0">Mapa</li>
         </ul>
     </nav>
     <ul class="player">
@@ -21,7 +22,9 @@
     </ul>
     <div class="background"><div></div></div>
     <div id="map" class="map"></div>
-    <div class="rsvp"></div>
+    <div id="rsvp" class="rsvp">
+
+    </div>
 {% endblock %}
 
 {% block js %}
@@ -45,13 +48,16 @@
             {% for location in locations %}
                 {
                     id: "location-{{ forloop.counter0 }}",
-                    title: "{{ location.title }}",
-                    description: "{{ location.description }}",
+                    title: "{{ location.title|escapejs }}",
+                    content: "{{ location.content|escapejs }}",
+                    css: '{{ location.css }}',
                     latitude: {{ location.latitude }},
-                    longitude: {{ location.longitude }}
+                    longitude: {{ location.longitude }},
+                    icon: '{{ location.icon.url }}'
                 },
             {% endfor %}
         ];
     </script>
+    <script src="{% static 'js/infobox.js' %}"></script>
     <script src="{% static 'js/index.js' %}"></script>
 {% endblock %}

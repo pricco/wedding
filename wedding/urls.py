@@ -15,4 +15,8 @@ if settings.DEBUG:
                             url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
                                 'document_root': settings.MEDIA_ROOT,
                                 }),
+                            url(r'favicon.ico$', 'django.views.static.serve', {
+                                'path': 'static/content/favicon.ico',
+                                'document_root': settings.PROJECT_ROOT,
+                                }),
                             )

@@ -83,7 +83,7 @@ soundManager.setup({
     }
 });
 google.maps.event.addDomListener(window, 'load', function() {
-    var map = new google.maps.Map(document.getElementById("map"), {
+    var map = new google.maps.Map(document.getElementById('map'), {
         center: new google.maps.LatLng(-34.397, 150.644),
         zoom: 8,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -95,17 +95,59 @@ google.maps.event.addDomListener(window, 'load', function() {
         },
         styles: [
             {
-                /*stylers: [
-                    { hue: "#00ffe6" },
-                    { saturation: -20 }
-                ]*/
-                stylers: [ { "gamma": 1.58 }, { "saturation": 30 }, { "weight": 0.1 } ]
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    { "color": "#67c7c0" }
+                ]
             },{
-                featureType: "road",
-                elementType: "geometry",
-                stylers: [
-                    { lightness: 100 },
-                    { visibility: "simplified" }
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                    { "color": "#ffffff" }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    { "color": "#c0c0c0" }
+                ]
+            },{
+                "featureType": "poi",
+                "stylers": [
+                    { "visibility": "off" }
+                ]
+            },{
+                "featureType": "landscape.natural.terrain",
+                "stylers": [
+                    { "visibility": "off" }
+                ]
+            },{
+                "featureType": "landscape.natural.landcover",
+                "stylers": [
+                    { "color": "#e0e0e0" }
+                ]
+            },{
+                "featureType": "transit",
+                "stylers": [
+                    { "visibility": "off" }
+                ]
+            },{
+                "featureType": "road",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    { "color": "#a0a0a0" }
+                ]
+            },{
+                "featureType": "road",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    { "visibility": "off" }
+                ]
+            },{
+                "featureType": "road.local",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    { "color": "#c0c0c0" }
                 ]
             }
         ]
@@ -117,15 +159,47 @@ google.maps.event.addDomListener(window, 'load', function() {
         var marker = new google.maps.Marker({
             position: position,
             map: map,
-            /*icon: image,*/
+            icon: new google.maps.MarkerImage(location.icon, null, null, new google.maps.Point(20, 40)),
             title: location.title,
+            visible: true,
             zIndex: i
         });
         bounds.extend(position);
+
+        var myOptions = {
+            content: $('<div>').append($('<div>').addClass(location.css).html(location.content)).html(),
+            disableAutoPan: false,
+            maxWidth: 0,
+            pixelOffset: new google.maps.Size(-120, -40),
+            zIndex: null,
+            infoBoxClearance: new google.maps.Size(1, 1),
+            isHidden: false,
+            pane: 'floatPane',
+            enableEventPropagation: false,
+            alignBottom: true
+        };
+
+        google.maps.event.addListener(marker, 'click', function (e) {
+            ib.open(map, this);
+        });
+        var ib = new InfoBox(myOptions);
+
     });
     map.fitBounds(bounds);
+    map.setCenter(bounds.getCenter());
 });
 
 $('.to-map').click(function(){
-    $('.map').animate({top: 0}, 1000);
+    $('.rsvp').css({zIndex: 40, top: '100%' });
+    $('.map').css({zIndex: 41 }).animate({top: 0});
+});
+
+$('.to-rsvp').click(function(){
+    $('.map').css({zIndex: 40, top: '100%' });
+    $('.rsvp').css({zIndex: 41 }).animate({top: 0});
+});
+
+$('.to-home').click(function(){
+    $('.map').animate({top: '100%'}, 500);
+    $('.rsvp').animate({top: '100%'}, 500);
 });
