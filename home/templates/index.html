@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% load common %}
 {% load static from staticfiles %}
 
 {% block css %}
@@ -38,7 +39,7 @@
     <div class="window card" {% if card %}style="display: block;"{% endif %}>
         <div class="window-box">
             <div id="card" class="window-content">
-                <p>{{ group.name }}</p>
+                <p>{{ group.name|remove_accents }}</p>
                 <img src="{% static 'img/card.png' %}" />
             </div>
         </div>

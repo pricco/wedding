@@ -1,9 +1,11 @@
+{% load common %}
+
 {% if group %}
 <div class="confirm">
     <ul>
     {% for guest in group.guests.all %}
         <li data-id="{{ guest.id }}">
-            <p>{{ guest.alias }}</p>
+            <p>{{ guest.alias|remove_accents }}</p>
             <span tabindex="0" class="attendance{% if guest.attendance == 'Y' %} active{% endif %}">Voy</span>
             <span tabindex="0" class="celiac{% if guest.celiac %} active{% endif %}">Celiaco</span>
         </li>
