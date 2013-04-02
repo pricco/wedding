@@ -1,0 +1,23 @@
+{% if group %}
+<div class="confirm">
+    <ul>
+    {% for guest in group.guests.all %}
+        <li data-id="{{ guest.id }}">
+            <p>{{ guest.alias }}</p>
+            <span tabindex="0" class="attendance{% if guest.attendance == 'Y' %} active{% endif %}">Voy</span>
+            <span tabindex="0" class="celiac{% if guest.celiac %} active{% endif %}">Celiaco</span>
+        </li>
+    {% endfor %}
+    </ul>
+    <textarea placeholder="Dejanos un mensaje...">{{ group.message|default:'' }}</textarea>
+    <div class="footer">
+        <i class="icon-green-gift"></i>
+        <p>RedPagos 35867<br>Colectivo PuntoLuz</p>
+        <input type="button" value="Confirmar" />
+    </div>
+</div>
+{% else %}
+<div class="code">
+    <span>RSVP: nataliaypablo.com/</span><input type="text" id="rsvp-code"><input type="button" value="Chequear" />
+</div>
+{% endif %}

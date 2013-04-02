@@ -41,6 +41,7 @@ class Group(models.Model):
     name = models.CharField(max_length=200)
     status = models.CharField(max_length=1, choices=STATUSES, default='A')
     comment = models.TextField(null=True, blank=True)
+    message = models.TextField(null=True, blank=True)
     phone = models.CharField(max_length=100, null=True, blank=True)
     called = models.BooleanField(default=False)
     web = models.BooleanField(default=False)

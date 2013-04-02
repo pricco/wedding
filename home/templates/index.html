@@ -21,15 +21,35 @@
         <li class="next">Next</li>
     </ul>
     <div class="background"><div></div></div>
-    <div id="map" class="map"></div>
-    <div id="rsvp" class="rsvp">
-
+    <div class="window map">
+        <div class="window-box">
+            <h1><i class="icon-ornament-left"></i> Mapa <i class="icon-ornament-right"></i></h1>
+            <div id="map" class="window-content"></div>
+        </div>
     </div>
+    <div class="window rsvp">
+        <div class="window-box">
+            <h1><i class="icon-ornament-left"></i> RSVP <i class="icon-ornament-right"></i></h1>
+            <div id="rsvp" class="window-content">
+                {% include 'rsvp.html' %}
+            </div>
+        </div>
+    </div>
+    <div class="window card" {% if card %}style="display: block;"{% endif %}>
+        <div class="window-box">
+            <div id="card" class="window-content">
+                <p>{{ group.name }}</p>
+                <img src="{% static 'img/card.png' %}" />
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
 
 {% block js %}
     <script>
         window.STATIC_URL = '{% static '' %}';
+        window.CODE = {% if group %}'{{ group.code }}'{% else %}null{% endif %};
     </script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_API_KEY }}&sensor=false"></script>
     <script src="{% static 'vendor/soundmanager2/js/soundmanager2.js' %}"></script>

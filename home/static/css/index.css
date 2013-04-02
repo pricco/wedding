@@ -4,9 +4,10 @@ html, body {
 }
 
 header {
-    position: fixed;
     top: 30px;
-    left: 30px;
+    left: 50%;
+    margin-left: -166px;
+    position: fixed;
     z-index: 50;
     width: 333px;
     height: auto;
@@ -20,8 +21,8 @@ header img {
 
 nav {
     position: fixed;
-    bottom: 30px;
-    left: 30px;
+    bottom: 20px;
+    left: 20px;
     z-index: 50;
 }
 
@@ -55,8 +56,8 @@ nav ul li:hover {
 
 .player {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     z-index: 50;
     margin: 0;
     padding: 0;
@@ -87,9 +88,7 @@ nav ul li:hover {
     background: #fff;
 }
 
-
-.background,
-.background:after {
+.background {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -97,10 +96,7 @@ nav ul li:hover {
     left: 0px;
     z-index: 0;
 }
-.background:after {
-    content: '';
-    /*background: transparent url(../img/pattern.png) repeat top left;*/
-}
+
 .background div {
     width: 100%;
     height: 100%;
@@ -270,23 +266,46 @@ nav ul li:hover {
     }
 }
 
-.map {
+.window {
     position: fixed;
+    top: 0;
     height: 100%;
-    top: 100%;
     width: 100%;
+    background-color: rgba(30, 30, 30, 0);
+    display: none;
 }
 
-.rsvp {
-    position: fixed;
-    height: 100%;
-    top: 100%;
-    width: 100%;
-    background: #e9e9e9;
+.window h1 {
+    margin: 20px auto 10px;
+    font-family: FjallaOneRegular;
+    color: #67c7c0;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+}
+
+.window-box {
+    background-color: #ffffff;
+    display: block;
+    width: 50%;
+    left: 25%;
+    position: absolute;
+    top: 130px;
+    bottom: 30px;
+}
+
+.window-content {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    top: 70px;
+    overflow: auto;
 }
 
 ::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -307,10 +326,6 @@ nav ul li:hover {
 }
 
 @media (max-width: 600px) {
-    header {
-        left: 50%;
-        margin-left: -166px;
-    }
     nav {
         position: fixed;
         display: table;
@@ -340,6 +355,13 @@ nav ul li:hover {
         display: none;
     }
 
+    .window-box {
+        bottom: 34px;
+        width: auto;
+        left: 0;
+        right: 0;
+    }
+
 }
 
 @media (max-width: 416px) {
@@ -347,6 +369,9 @@ nav ul li:hover {
         left: 10%;
         width: 80%;
         margin-left: auto;
+    }
+    .window-box {
+        top: 23%;
     }
 }
 
@@ -362,7 +387,7 @@ nav ul li:hover {
 
 .infobox .infobox-close {
     display: block;
-    background: transparent url(../img/close.png) 0 0 no-repeat;
+    background: transparent url(../img/icons.png) -150px -120px no-repeat;
     width: 13px;
     height: 13px;
     float: right;
@@ -416,6 +441,10 @@ nav ul li:hover {
     background-position: 0 -40px;
 }
 
+.icon-green-gift {
+    background-position: 0 -80px;
+}
+
 .icon-rsvp {
     background-position: -40px 0;
 }
@@ -454,4 +483,218 @@ nav ul li:hover {
 
 .icon-white-rings {
     background-position: -200px -40px;
+}
+
+.icon-ornament-left {
+    display: inline-block;
+    line-height: 35px;
+    vertical-align: text-top;
+    background-position: 0 -120px;
+    width: 75px;
+    height: 35px;
+}
+
+.icon-ornament-right {
+    display: inline-block;
+    line-height: 35px;
+    vertical-align: text-top;
+    background-position: -75px -120px;
+    width: 75px;
+    height: 35px;
+}
+
+.card .window-box {
+    background-color: transparent;
+}
+
+.card .window-content {
+    text-align: center;
+    top: 10px;
+}
+
+.card .window-content img {
+    width: 510px;
+    left: 50%;
+    margin-left: -255px;
+    display: block;
+    position: absolute;
+}
+
+.card .window-content p {
+    position: absolute;
+    font-family: JennaSueRegular;
+    color: #000000;
+    font-size: 180%;
+    left: 50%;
+    top: 144px;
+    margin: 0 0 0 30px;
+    padding: 0;
+    line-height: 26px;
+    background-color: transparent;
+    width: 202px;
+    word-wrap: break-word;
+    text-align: left;
+    z-index: 1;
+}
+
+.rsvp .confirm {
+    padding: 0 30px;
+}
+
+.rsvp .confirm ul {
+    margin: 0;
+    padding: 20px 0;
+    list-style: none;
+}
+
+.rsvp .confirm ul li {
+    margin: 0;
+    text-align: right;
+    padding: 0 4px;
+}
+
+.rsvp .confirm ul li:after,
+.rsvp .confirm ul li:before {
+    content: " ";
+    display: table;
+}
+
+.rsvp .confirm ul li:after {
+    clear: both;
+}
+
+.rsvp .confirm ul li {
+    *zoom: 1;
+}
+
+.rsvp .confirm ul li p {
+    float: left;
+    font-family: jennasueregular;
+    text-align: left;
+    font-size: 30px;
+    line-height: 50px;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.rsvp .confirm ul li span {
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px 0 2px;
+    padding: 4px 8px 2px;
+    font-family: FjallaOneRegular;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 140%;
+    cursor: pointer;
+    outline: 0;
+    background: #c1c1c1;
+    color: #fff;
+}
+
+.rsvp .confirm ul li span.active {
+    background: #67c7c0;
+    color: #fff;
+}
+
+.rsvp .confirm textarea {
+    border: 0;
+    width: 100%;
+    height: 60px;
+    font-family: JennaSueRegular;
+    font-size: 30px;
+    outline: 0;
+    resize: none;
+    color: #67c7c0;
+}
+
+.rsvp .confirm .footer {
+    height: 50px;
+}
+
+.rsvp .confirm .footer i {
+    float: left;
+    margin: 6px 0 0 -6px;
+}
+
+.rsvp .confirm .footer p {
+    float: left;
+    font-family: JennaSueRegular;
+    font-size: 24px;
+    margin: 0 0 0 6px;
+}
+
+.rsvp .confirm .footer input {
+    float: right;
+    text-align: center;
+    padding: 4px 8px 2px;
+    border: 0;
+    font-family: FjallaOneRegular;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 140%;
+    cursor: pointer;
+    outline: 0;
+    background: #67c7c0;
+    color: #fff;
+    margin: 10px 0 0 0;
+}
+
+.rsvp .confirm .footer input:hover,
+.rsvp .confirm .footer input:active {
+    background: #ffffff;
+    color: #67c7c0;
+}
+
+.rsvp .code {
+    padding: 30px;
+    text-align: center;
+}
+
+.rsvp .code span {
+    font-family: JennaSueRegular;
+    font-size: 30px;
+}
+
+.rsvp .code input[type=text] {
+    width: 4em;
+    font-size: 24px;
+    border: 0;
+    border-bottom: 1px solid #c1c1c1;
+    outline: 0;
+    font-family: JennaSueRegular;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.rsvp .code input[type=button] {
+    text-align: center;
+    padding: 4px 8px 2px;
+    border: 0;
+    font-family: FjallaOneRegular;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 140%;
+    cursor: pointer;
+    outline: 0;
+    background: #67c7c0;
+    color: #fff;
+    margin: 0 0 0 10px;
+}
+
+.rsvp .code input[type=button]:hover {
+    background: #fff;
+    color: #67c7c0;
+}
+
+.toast {
+    padding: 10px;
+    font-family: FjallaOneRegular;
+    text-transform: uppercase;
+    background: #67c7c0;
+    color: #fff;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    font-size: 140%;
 }
