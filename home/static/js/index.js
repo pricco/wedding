@@ -212,10 +212,6 @@
         $('.rsvp, .map, .card').fadeOut(200);
     });
 
-    $('#rsvp').on('click', '.confirm span', function(e){
-        $(e.target).toggleClass('active');
-    });
-
     var toast = function(text) {
         var t = $('<div>');
         t.addClass('toast')
@@ -233,7 +229,51 @@
             });
     };
 
-    var confirm = function(){
+    $('#rsvp').on('click', '.confirm span.attendance', function(e){
+        e = $(e.target);
+        e.toggleClass('active');
+        confirmData({
+            guests: [{id: e.parent().data('id'), 'attendance': e.hasClass('active')}]
+        });
+    });
+
+    $('#rsvp').on('click', '.confirm span.celiac', function(e){
+        e = $(e.target);
+        e.toggleClass('active');
+        confirmData({
+            guests: [{id: e.parent().data('id'), 'celiac': e.hasClass('active')}]
+        });
+    });
+
+    var messageTimeout;
+    $('#rsvp').on('input', '.confirm textarea', function(e){
+        clearTimeout(messageTimeout);
+        messageTimeout = setTimeout(function(){
+            confirmData({
+                message: $('.rsvp .confirm textarea').val()
+            });
+        }, 500);
+    });
+
+    var confirmData = function(data){
+        $.ajax({
+            "type" : 'POST',
+            "url" : '/confirm',
+            "dataType" : 'json',
+            'data' : {'post': JSON.stringify(data)},
+            'success' : function (data) {
+                if (!data.confirmed) {
+                    toast('Algo se rompio... Intenta cargar la pagina nuevamente.');
+                    $('#rsvp').html(data.html);
+                }
+            },
+            'error' : function (data) {
+                toast('Algo se rompio... Intenta cargar la pagina nuevamente.');
+            }
+        });
+    };
+
+    var confirmAll = function(){
         var data = {
             message: $('.rsvp .confirm textarea').val(),
             guests: []
@@ -286,7 +326,7 @@
         });
     };
 
-    $('#rsvp').on('click', '.confirm .footer input', confirm);
+    $('#rsvp').on('click', '.confirm .footer input', confirmAll);
     $('#rsvp').on('click', '.code input[type=button]', checkCode)
     $('#rsvp').on('keypress', '.code input[type=text]', function(e){
        if (e.which == 13) {

@@ -20,13 +20,18 @@ class ConfirmView(View, GroupMixin):
         group = self.get_group(request)
         data = json.loads(request.POST.get('post', '{}'))
         if group and data:
-            group.message = data.get('message', None)
-            for guest in group.guests.all():
-                dguest = next(iter(filter(lambda g: g['id'] == guest.id, data.get('guests', []))), None)
-                if dguest:
-                    guest.attendance = (dguest.get('attendance', False) and 'Y') or 'N'
-                    guest.celiac = dguest.get('celiac', False)
-                    guest.save()
+            if 'message' in data:
+                group.message = data['message']
+            if 'guests' in data:
+                for guest in group.guests.all():
+                    dguest = next(iter(filter(lambda g: g['id'] == guest.id, data.get('guests', []))), None)
+                    if dguest:
+                        if 'attendance' in dguest:
+                            guest.attendance = (dguest['attendance'] and 'Y') or 'N'
+                        if 'celiac' in dguest:
+                            guest.celiac = dguest['celiac']
+                        guest.save()
+            group.web = True
             group.save()
             confirmed = True
         return HttpResponse(json.dumps({
