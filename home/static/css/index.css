@@ -325,7 +325,7 @@ nav ul li:hover {
     background: transparent;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
     nav {
         position: fixed;
         display: table;
@@ -360,6 +360,10 @@ nav ul li:hover {
         width: auto;
         left: 0;
         right: 0;
+    }
+
+    .rsvp .confirm {
+        padding: 0 15px;
     }
 
 }
@@ -512,22 +516,25 @@ nav ul li:hover {
     top: 10px;
 }
 
+.card .window-content div {
+    width: 510px;
+    height: 340px;
+    margin: 0 auto;
+}
+
 .card .window-content img {
     width: 510px;
-    left: 50%;
-    margin-left: -255px;
     display: block;
-    position: absolute;
+    position: relative;
+    margin: 0 auto;
 }
 
 .card .window-content p {
-    position: absolute;
+    position: relative;
     font-family: JennaSueRegular;
     color: #000000;
     font-size: 180%;
-    left: 50%;
-    top: 144px;
-    margin: 0 0 0 30px;
+    margin: -196px 0 0 284px;
     padding: 0;
     line-height: 26px;
     background-color: transparent;
