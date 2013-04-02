@@ -54,6 +54,9 @@ class Group(models.Model):
         return ', '.join([guest.name for guest in self.guests.order_by('order', 'id')])
     guests_names.short_description = 'Guests'
 
+    def guests_ordered(self):
+        return self.guests.order_by('order', 'id')
+
     @property
     def attendance(self):
         return len(filter(lambda g: g.attendance == 'Y', self.guests.all()))
