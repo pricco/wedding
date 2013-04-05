@@ -58,7 +58,7 @@
                 var sound = soundManager.getSoundById(song.id);
                 if (sound.paused) {
                     sound.play();
-                    textShow(song.artist + ' -' + song.title);
+                    textShow(song.artist + ' - ' + song.title);
                     $('.player .play').text('Pause');
                 } else {
                     sound.pause();
@@ -71,7 +71,7 @@
             var play = function(){
                 var song = window.songs[current];
                 soundManager.play(song.id, {volume: 100, onfinish: playNext});
-                textShow(song.artist + ' -' + song.title);
+                textShow(song.artist + ' - ' + song.title);
             };
             var playNext = function() {
                 current = current < window.songs.length - 1 ? current + 1 : 0;
@@ -214,10 +214,14 @@
 
     var toast = function(text) {
         var t = $('<div>');
-        t.addClass('toast')
-            .text(text)
-            .appendTo($('body'))
-            .css({
+        t.addClass('toast').text(text).appendTo($('body')).css({
+            visibility: 'hidden',
+            display: 'block'
+        });
+        setTimeout(function(){
+            t.css({
+                display: 'none',
+                visibility: 'visible',
                 zIndex: 100000,
                 marginLeft: '-' + (t.width() / 2) + 'px',
                 marginLTop: '-' + (t.height() / 2) + 'px'
@@ -227,6 +231,7 @@
                     t.fadeOut(200);
                 }, 1000);
             });
+        }, 1);
     };
 
     $('#rsvp').on('click', '.confirm span.attendance', function(e){

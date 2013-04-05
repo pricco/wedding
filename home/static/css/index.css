@@ -6,7 +6,7 @@ html, body {
 header {
     top: 30px;
     left: 50%;
-    margin-left: -166px;
+    margin-left: -167px;
     position: fixed;
     z-index: 50;
     width: 333px;
@@ -39,7 +39,7 @@ nav ul li {
     margin: 0 8px;
     display: block;
     padding: 4px 8px 2px;
-    font-family: FjallaOneRegular;
+    font-family: FjallaOneRegular, Arial, sans-serif;
     background: #67c7c0;
     color: #fff;
     text-transform: uppercase;
@@ -69,7 +69,7 @@ nav ul li:hover {
     margin: 0 8px;
     display: block;
     padding: 4px 8px 2px;
-    font-family: FjallaOneRegular;
+    font-family: FjallaOneRegular, Arial, sans-serif;
     background: #67c7c0;
     color: #fff;
     text-transform: uppercase;
@@ -277,7 +277,7 @@ nav ul li:hover {
 
 .window h1 {
     margin: 20px auto 10px;
-    font-family: FjallaOneRegular;
+    font-family: FjallaOneRegular, Arial, sans-serif;
     color: #67c7c0;
     text-transform: uppercase;
     font-weight: normal;
@@ -407,7 +407,7 @@ nav ul li:hover {
 
 .infobox h1 {
     font-weight: normal;
-    font-family: FjallaOneRegular;
+    font-family: FjallaOneRegular, Arial, sans-serif;
     color: #ffffff;
     padding: 0;
     margin: 10px;
@@ -531,7 +531,7 @@ nav ul li:hover {
 
 .card .window-content p {
     position: relative;
-    font-family: JennaSueRegular;
+    font-family: JennaSueRegular, Courier;
     color: #000000;
     font-size: 180%;
     margin: -196px 0 0 284px;
@@ -576,7 +576,7 @@ nav ul li:hover {
 
 .rsvp .confirm ul li p {
     float: left;
-    font-family: jennasueregular;
+    font-family: JennaSueRegular, Arial, sans-serif;
     text-align: left;
     font-size: 30px;
     line-height: 50px;
@@ -589,7 +589,7 @@ nav ul li:hover {
     display: inline-block;
     margin: 4px 2px 0 2px;
     padding: 4px 8px 2px;
-    font-family: FjallaOneRegular;
+    font-family: FjallaOneRegular, Arial, sans-serif;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 140%;
@@ -608,7 +608,7 @@ nav ul li:hover {
     border: 0;
     width: 100%;
     height: 60px;
-    font-family: JennaSueRegular;
+    font-family: JennaSueRegular, Arial, sans-serif;
     font-size: 30px;
     outline: 0;
     resize: none;
@@ -626,7 +626,7 @@ nav ul li:hover {
 
 .rsvp .confirm .footer p {
     float: left;
-    font-family: JennaSueRegular;
+    font-family: JennaSueRegular, Arial, sans-serif;
     font-size: 24px;
     margin: 0 0 0 6px;
 }
@@ -636,7 +636,7 @@ nav ul li:hover {
     text-align: center;
     padding: 4px 8px 2px;
     border: 0;
-    font-family: FjallaOneRegular;
+    font-family: FjallaOneRegular, Arial, sans-serif;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 140%;
@@ -659,7 +659,7 @@ nav ul li:hover {
 }
 
 .rsvp .code span {
-    font-family: JennaSueRegular;
+    font-family: JennaSueRegular, Arial, sans-serif;
     font-size: 30px;
 }
 
@@ -669,7 +669,7 @@ nav ul li:hover {
     border: 0;
     border-bottom: 1px solid #c1c1c1;
     outline: 0;
-    font-family: JennaSueRegular;
+    font-family: JennaSueRegular, Arial, sans-serif;
     font-size: 30px;
     text-transform: uppercase;
 }
@@ -678,7 +678,7 @@ nav ul li:hover {
     text-align: center;
     padding: 4px 8px 2px;
     border: 0;
-    font-family: FjallaOneRegular;
+    font-family: FjallaOneRegular, Arial, sans-serif;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 140%;
@@ -696,7 +696,7 @@ nav ul li:hover {
 
 .toast {
     padding: 10px;
-    font-family: FjallaOneRegular;
+    font-family: FjallaOneRegular, Arial, sans-serif;
     text-transform: uppercase;
     background: #67c7c0;
     color: #fff;
