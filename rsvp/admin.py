@@ -1,7 +1,7 @@
 from django.contrib import admin
 from rsvp.models import Group, Guest
 from django.contrib.admin.views.main import ChangeList
-from django.db.models import Sum, Count
+from django.db.models import Sum, Count, Q
 
 
 class GuestInline(admin.TabularInline):
@@ -15,12 +15,22 @@ class GroupChangeList(ChangeList):
 
     def get_results(self, *args, **kwargs):
         super(GroupChangeList, self).get_results(*args, **kwargs)
-        q = self.result_list.aggregate(count=Count('guests'))
-        self.guests_count = q['count']
-        q = self.result_list.filter(guests__attendance='Y').aggregate(count=Count('guests'))
-        self.guests_attendance_yes = q['count']
-        q = self.result_list.filter(guests__attendance='N').aggregate(count=Count('guests'))
-        self.guests_attendance_no = q['count']
+        stats = {
+            'total': 0,
+            'Y': {'A': 0, 'C': 0, 'B': 0, 'total': 0},
+            'N': {'A': 0, 'C': 0, 'B': 0, 'total': 0},
+            'U': {'A': 0, 'C': 0, 'B': 0, 'total': 0},
+            'A': {'U': 0, 'Y': 0, 'N': 0, 'total': 0},
+            'C': {'U': 0, 'Y': 0, 'N': 0, 'total': 0},
+            'B': {'U': 0, 'Y': 0, 'N': 0, 'total': 0},
+        }
+        for value in self.result_list.values('guests__age', 'guests__attendance').annotate(count=Count('guests')):
+            stats['total'] += value['count']
+            stats[value['guests__attendance']]['total'] += value['count']
+            stats[value['guests__attendance']][value['guests__age']] += value['count']
+            stats[value['guests__age']]['total'] += value['count']
+            stats[value['guests__age']][value['guests__attendance']] += value['count']
+        self.stats = stats
 
 
 class GroupAdmin(admin.ModelAdmin):

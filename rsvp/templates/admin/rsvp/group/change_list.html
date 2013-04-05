@@ -2,9 +2,50 @@
 
 {% block result_list %}
     <div class="actions">
-        Guests: {{ cl.guests_count }} /
-        Yes: {{ cl.guests_attendance_yes }} /
-        No: {{ cl.guests_attendance_no }}
+        <table>
+            <tr>
+                <th></th>
+                <th>Total</th>
+                <th>Adult</th>
+                <th>Child</th>
+                <th>Baby</th>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>{{ cl.stats.total }}</td>
+                <td>{{ cl.stats.A.total }}</td>
+                <td>{{ cl.stats.C.total }}</td>
+                <td>{{ cl.stats.B.total }}</td>
+            </tr>
+            <tr>
+                <td>Unknown</td>
+                <td>{{ cl.stats.U.total }}</td>
+                <td>{{ cl.stats.U.A }}</td>
+                <td>{{ cl.stats.U.C }}</td>
+                <td>{{ cl.stats.U.B }}</td>
+            </tr>
+            <tr>
+                <td>Yes</td>
+                <td>{{ cl.stats.Y.total }}</td>
+                <td>{{ cl.stats.Y.A }}</td>
+                <td>{{ cl.stats.Y.C }}</td>
+                <td>{{ cl.stats.Y.B }}</td>
+            </tr>
+            <tr>
+                <td>No</td>
+                <td>{{ cl.stats.N.total }}</td>
+                <td>{{ cl.stats.N.A }}</td>
+                <td>{{ cl.stats.N.C }}</td>
+                <td>{{ cl.stats.N.B }}</td>
+            </tr>
+            <tr>
+                <td>Estimated</td>
+                <td>{{ cl.stats.U.total|add:cl.stats.Y.total }}</td>
+                <td><strong>{{ cl.stats.U.A|add:cl.stats.Y.A }}</strong></td>
+                <td><strong>{{ cl.stats.U.C|add:cl.stats.Y.C }}</strong></td>
+                <td><strong>{{ cl.stats.U.B|add:cl.stats.Y.B }}</strong></td>
+            </tr>
+        </table>
     </div>
     {{ block.super }}
 {% endblock %}
