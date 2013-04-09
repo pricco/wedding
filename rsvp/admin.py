@@ -35,7 +35,7 @@ class GroupChangeList(ChangeList):
 
 class GroupAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'code', 'invited_by', 'guests_names', 'status', 'count', 'attendance', 'called', 'phone', 'comment',)
+    list_display = ('name', 'code', 'invited_by', 'count', 'attendance', 'guests_names', 'status', 'comment', 'message',)
     inlines = (GuestInline,)
     list_filter = ('status', 'invited_by', 'called', 'web',)
     readonly_fields = ('updated',)
