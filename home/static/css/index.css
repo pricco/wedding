@@ -40,7 +40,7 @@ nav ul li {
     display: block;
     padding: 4px 8px 2px;
     font-family: FjallaOneRegular, Arial, sans-serif;
-    background: #67c7c0;
+    background: #999999;
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
@@ -50,7 +50,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-    color: #67c7c0;
+    color: #999999;
     background: #fff;
 }
 
@@ -70,7 +70,7 @@ nav ul li:hover {
     display: block;
     padding: 4px 8px 2px;
     font-family: FjallaOneRegular, Arial, sans-serif;
-    background: #67c7c0;
+    background: #999999;
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
@@ -84,7 +84,7 @@ nav ul li:hover {
 }
 
 .player li:hover {
-    color: #67c7c0;
+    color: #999999;
     background: #fff;
 }
 
@@ -278,7 +278,7 @@ nav ul li:hover {
 .window h1 {
     margin: 20px auto 10px;
     font-family: FjallaOneRegular, Arial, sans-serif;
-    color: #67c7c0;
+    color: #999999;
     text-transform: uppercase;
     font-weight: normal;
     text-align: center;
@@ -313,7 +313,7 @@ nav ul li:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #67c7c0;
+    background-color: #999999;
 }
 
 ::-webkit-scrollbar-button {
@@ -382,7 +382,7 @@ nav ul li:hover {
 
 .infobox {
     position: absolute;
-    background-color: #67c7c0;
+    background-color: #999999;
     width: 260px;
     opacity: 1;
     padding: 0;
@@ -600,7 +600,7 @@ nav ul li:hover {
 }
 
 .rsvp .confirm ul li span.active {
-    background: #67c7c0;
+    background: #999999;
     color: #fff;
 }
 
@@ -612,7 +612,7 @@ nav ul li:hover {
     font-size: 30px;
     outline: 0;
     resize: none;
-    color: #67c7c0;
+    color: #999999;
 }
 
 .rsvp .confirm .footer {
@@ -642,7 +642,7 @@ nav ul li:hover {
     font-size: 140%;
     cursor: pointer;
     outline: 0;
-    background: #67c7c0;
+    background: #999999;
     color: #fff;
     margin: 10px 0 0 0;
 }
@@ -650,7 +650,7 @@ nav ul li:hover {
 .rsvp .confirm .footer input:hover,
 .rsvp .confirm .footer input:active {
     background: #ffffff;
-    color: #67c7c0;
+    color: #999999;
 }
 
 .rsvp .code {
@@ -684,21 +684,21 @@ nav ul li:hover {
     font-size: 140%;
     cursor: pointer;
     outline: 0;
-    background: #67c7c0;
+    background: #999999;
     color: #fff;
     margin: 0 0 0 10px;
 }
 
 .rsvp .code input[type=button]:hover {
     background: #fff;
-    color: #67c7c0;
+    color: #999999;
 }
 
 .toast {
     padding: 10px;
     font-family: FjallaOneRegular, Arial, sans-serif;
     text-transform: uppercase;
-    background: #67c7c0;
+    background: #999999;
     color: #fff;
     position: fixed;
     left: 50%;

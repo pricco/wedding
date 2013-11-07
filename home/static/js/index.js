@@ -99,7 +99,7 @@
                 {
                     "elementType": "labels.text.fill",
                     "stylers": [
-                        { "color": "#67c7c0" }
+                        { "color": "#999999" }
                     ]
                 },{
                     "elementType": "labels.text.stroke",
