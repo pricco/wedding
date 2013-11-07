@@ -9,7 +9,7 @@ def random_code():
 
 HOST = (
     ('N', 'Natalia',),
-    ('P', 'Pablo',)
+    ('G', 'Gerardo',)
 )
 
 STATUSES = (
