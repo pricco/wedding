@@ -45,13 +45,13 @@ AWS_S3_SECURE_URLS = False
 
 MEDIA_ROOT = rel('media')
 MEDIA_URL = '/media/'
-MEDIA_BUCKET = 'nataliaypablo'
+MEDIA_BUCKET = 'weddingassets'
 MEDIA_HEADERS = {
     'Expires': 'Thu, 31 Dec 2050 00:00:00 GMT',
     'Cache-Control': 'max-age=315360000, public',
 }
-MEDIA_LOCATION = 'media'
-MEDIA_DOMAIN = 'd24xzry264ziu9.cloudfront.net'
+MEDIA_LOCATION = 'nataliaypablo/media'
+MEDIA_DOMAIN = 'd38obarryt175p.cloudfront.net'
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 STATIC_ROOT = rel('collectedstatic')
@@ -63,13 +63,13 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
-STATIC_BUCKET = 'nataliaypablo'
+STATIC_BUCKET = 'weddingassets'
 STATIC_HEADERS = {
     'Expires': 'Thu, 31 Dec 2050 00:00:00 GMT',
     'Cache-Control': 'max-age=315360000, public',
     }
-STATIC_LOCATION = 'static'
-STATIC_DOMAIN = 'd24xzry264ziu9.cloudfront.net'
+STATIC_LOCATION = 'nataliaypablo/static'
+STATIC_DOMAIN = 'd38obarryt175p.cloudfront.net'
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 SECRET_KEY = '6lg+yulbm5m=e&8=@e=5j&0r5xqtk(j08*ee8v9*c1b0fz8(ki'
