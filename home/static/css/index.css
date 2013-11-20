@@ -4,7 +4,7 @@ html, body {
 }
 
 header {
-    top: 30px;
+    top: -5px;
     left: 50%;
     margin-left: -167px;
     position: fixed;
