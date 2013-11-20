@@ -39,12 +39,12 @@ nav ul li {
     margin: 0 8px;
     display: block;
     padding: 4px 8px 2px;
-    font-family: FjallaOneRegular, Arial, sans-serif;
+    font-family: 'Cantata One', serif;
     background: #999999;
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 140%;
+    font-size: 130%;
     cursor: pointer;
     outline: 0;
 }
@@ -69,7 +69,7 @@ nav ul li:hover {
     margin: 0 8px;
     display: block;
     padding: 4px 8px 2px;
-    font-family: FjallaOneRegular, Arial, sans-serif;
+    font-family: 'Cantata One', serif;
     background: #999999;
     color: #fff;
     text-transform: uppercase;
@@ -278,7 +278,7 @@ nav ul li:hover {
 
 .window h1 {
     margin: 20px auto 10px;
-    font-family: FjallaOneRegular, Arial, sans-serif;
+    font-family: 'Cantata One', serif;
     color: #999999;
     text-transform: uppercase;
     font-weight: normal;
@@ -408,7 +408,7 @@ nav ul li:hover {
 
 .infobox h1 {
     font-weight: normal;
-    font-family: FjallaOneRegular, Arial, sans-serif;
+    font-family: 'Cantata One', serif;
     color: #ffffff;
     padding: 0;
     margin: 10px;
@@ -577,10 +577,10 @@ nav ul li:hover {
 
 .rsvp .confirm ul li p {
     float: left;
-    font-family: JennaSueRegular, Arial, sans-serif;
+    font-family: 'Antic Didone', serif;
     text-align: left;
-    font-size: 30px;
-    line-height: 50px;
+    font-size: 26px;
+    line-height: 40px;
     vertical-align: middle;
     margin: 0;
 }
@@ -590,7 +590,7 @@ nav ul li:hover {
     display: inline-block;
     margin: 4px 2px 0 2px;
     padding: 4px 8px 2px;
-    font-family: FjallaOneRegular, Arial, sans-serif;
+    font-family: 'Cantata One', serif;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 140%;
@@ -609,7 +609,7 @@ nav ul li:hover {
     border: 0;
     width: 100%;
     height: 60px;
-    font-family: JennaSueRegular, Arial, sans-serif;
+    font-family: 'Antic Didone', serif;
     font-size: 30px;
     outline: 0;
     resize: none;
@@ -627,7 +627,7 @@ nav ul li:hover {
 
 .rsvp .confirm .footer p {
     float: left;
-    font-family: JennaSueRegular, Arial, sans-serif;
+    font-family: 'Antic Didone', serif;
     font-size: 24px;
     margin: 0 0 0 6px;
 }
@@ -637,7 +637,7 @@ nav ul li:hover {
     text-align: center;
     padding: 4px 8px 2px;
     border: 0;
-    font-family: FjallaOneRegular, Arial, sans-serif;
+    font-family: 'Cantata One', serif;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 140%;
@@ -660,7 +660,7 @@ nav ul li:hover {
 }
 
 .rsvp .code span {
-    font-family: JennaSueRegular, Arial, sans-serif;
+    font-family: 'Antic Didone', serif;
     font-size: 30px;
 }
 
@@ -670,7 +670,7 @@ nav ul li:hover {
     border: 0;
     border-bottom: 1px solid #c1c1c1;
     outline: 0;
-    font-family: JennaSueRegular, Arial, sans-serif;
+    font-family: 'Antic Didone', serif;
     font-size: 30px;
     text-transform: uppercase;
 }
@@ -679,7 +679,7 @@ nav ul li:hover {
     text-align: center;
     padding: 4px 8px 2px;
     border: 0;
-    font-family: FjallaOneRegular, Arial, sans-serif;
+    font-family: 'Cantata One', serif;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 140%;
@@ -697,7 +697,7 @@ nav ul li:hover {
 
 .toast {
     padding: 10px;
-    font-family: FjallaOneRegular, Arial, sans-serif;
+    font-family: 'Cantata One', serif;
     text-transform: uppercase;
     background: #999999;
     color: #fff;
