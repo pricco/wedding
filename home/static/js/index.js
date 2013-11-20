@@ -235,8 +235,6 @@
     };
 
     $('#rsvp').on('click', '.confirm span.attendance', function(e){
-        toast('DESHABILITADO. LLAMAR AL 099 59 40 50');
-        return;
         e = $(e.target);
         e.toggleClass('active');
         confirmData({
@@ -245,8 +243,6 @@
     });
 
     $('#rsvp').on('click', '.confirm span.celiac', function(e){
-        toast('DESHABILITADO. LLAMAR AL 099 59 40 50');
-        return;
         e = $(e.target);
         e.toggleClass('active');
         confirmData({
